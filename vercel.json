@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/reading.js": {
+      "runtime": "edge"
+    }
+  }
+}
