@@ -1,7 +1,5 @@
 {
-  "functions": {
-    "api/reading.js": {
-      "runtime": "edge"
-    }
-  }
+  "rewrites": [
+    { "source": "/api/reading", "destination": "/api/reading.js" }
+  ]
 }
