@@ -28,6 +28,11 @@ export default async function handler(req, res) {
       body,
     });
 
+    if (!response.ok) {
+      const errText = await response.text();
+      return res.status(500).json({ error: errText });
+    }
+
     const reader = response.body.getReader();
     while (true) {
       const { done, value } = await reader.read();
@@ -39,4 +44,4 @@ export default async function handler(req, res) {
   } catch(err) {
     res.status(500).json({ error: err.message });
   }
-}
+  
